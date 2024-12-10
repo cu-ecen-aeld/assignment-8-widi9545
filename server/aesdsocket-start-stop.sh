@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 #https://unix.stackexchange.com/questions/20357/how-can-i-make-a-script-in-etc-init-d-start-at-boot
 
 
