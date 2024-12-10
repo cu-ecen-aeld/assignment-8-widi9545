@@ -3,7 +3,7 @@
 
 
 start() {
-    start-stop-daemon -S -n aesdsocket --exec /usr/bin/aesdsocket -d
+    start-stop-daemon -S -n aesdsocket --exec /usr/bin/aesdsocket -- -d
 
 }
    
