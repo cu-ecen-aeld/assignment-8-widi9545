@@ -3,12 +3,12 @@
 
 
 start() {
-    start-stop-daemon -S -n aedsocket --exec /usr/bin/aesdsocket 
+    start-stop-daemon -S -n aesdsocket --exec /usr/bin/aesdsocket -d
 
 }
    
 stop() {
-    start-stop-daemon --stop --signal SIGTERM --name aedsocket --retry 3 
+    start-stop-daemon --stop --signal SIGTERM --name aesdsocket --retry 3 
 
 }
 
