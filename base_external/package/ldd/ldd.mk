@@ -13,7 +13,7 @@ LDD_VERSION = '24ea316'
 LDD_SITE = 'git@github.com:cu-ecen-aeld/assignment-7-widi9545.git'
 LDD_SITE_METHOD = git
 LDD_GIT_SUBMODULES = YES
-LDD_MODULE_SUBDIRS = misc-modules
+LDD_MODULE_SUBDIRS = misc-modules scull
 
 #https://buildroot.org/downloads/manual/manual.html - 18.20
 $(eval $(kernel-module))
