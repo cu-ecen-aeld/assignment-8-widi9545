@@ -13,12 +13,10 @@ LDD_VERSION = '24ea316'
 LDD_SITE = 'git@github.com:cu-ecen-aeld/assignment-7-widi9545.git'
 LDD_SITE_METHOD = git
 LDD_GIT_SUBMODULES = YES
-CROSS_COMPILE=aarch64-none-linux-gnu-
-ARCH=arm64
 
 define LDD_BUILD_CMDS
-	$(MAKE) $(TARGET_CONFIGURE_OPTS) -C $(@D)/misc-modules 
-	$(MAKE) $(TARGET_CONFIGURE_OPTS) -C $(@D)/scull 
+	$(MAKE)  -C $(@D)/misc-modules 
+	$(MAKE)  -C $(@D)/scull 
 endef
 
 # TODO add your writer, finder and finder-test utilities/scripts to the installation steps below
