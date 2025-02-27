@@ -6,7 +6,7 @@ start() {
    device="scull"
    module="scull"
 	
-	/sbin/insmod /lib/modules/6.1.44/extra/scull.ko
+	/sbin/insmod /lib/modules/"$(uname -r)"/extra/scull.ko
    major=$(awk "\$2==\"$module\" {print \$1}" /proc/devices)
 
    rm -f /dev/${device}[0-3]
@@ -47,7 +47,7 @@ start() {
    chgrp $group /dev/${device}priv
    chmod $mode  /dev/${device}priv
 
-   /sbin/insmod /lib/modules/6.1.44/extra/faulty.ko
+   /sbin/insmod /lib/modules/"$(uname -r)"/extra/faulty.ko
    module="faulty"
    major=$(awk "\$2==\"$module\" {print \$1}" /proc/devices)
    rm -f /dev/$module
@@ -55,7 +55,7 @@ start() {
    chgrp $group /dev/faulty
    chmod $mode /dev/faulty
 
-   /sbin/insmod /lib/modules/6.1.44/extra/hello.ko
+   /sbin/insmod /lib/modules/"$(uname -r)"/extra/hello.ko
    module="hello"
    mknod /dev/$module c 268 0 
    chgrp $group /dev/$module
