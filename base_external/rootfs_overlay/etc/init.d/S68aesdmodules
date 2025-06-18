@@ -1,0 +1,40 @@
+#!/bin/sh
+
+start(){
+	mode="664"
+	group="staff"
+	/sbin/insmod /lib/modules/"$(uname -r)"/extra/aesdchar.ko
+	module="aesdchar"
+	major=$(awk "\$2==\"$module\" {print \$1}" /proc/devices)
+	rm -f /dev/$module
+	mknod /dev/$module c $major 0
+	chgrp $group /dev/aesdchar
+	chmod $mode /dev/aesdchar
+
+}
+
+
+
+stop(){
+	module="aesdchar"
+	/sbin/rmmod $module
+	rm -f /dev/$module
+
+
+
+}
+
+
+case "$1" in
+    start)
+       start
+       ;;
+    stop)
+       stop
+       ;;
+    *)
+       echo "Usage: $0 {start|stop}"
+esac
+
+exit 0
+
