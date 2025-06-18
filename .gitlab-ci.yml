@@ -2,6 +2,8 @@ image: "cuaesd/aesd-autotest"
 
 variables:
     GIT_SUBMODULE_STRATEGY: recursive
+    GIT_TRACE: 1 
+    GIT_CURL_VERBOSE: 1
 
 test:
     script:
